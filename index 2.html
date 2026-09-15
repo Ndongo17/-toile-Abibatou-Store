@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#bd8b24">
+<title>Étoile Abibatou Store — Boutique</title>
+<style>
+:root{--gold:#bd8b24;--gold2:#e2b94d;--ink:#121212;--muted:#6d6d6d;--line:#e9e5dc;--bg:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Inter,Arial,sans-serif;background:#fff}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+.top{background:#111;color:#fff;text-align:center;padding:8px;font-size:12px;letter-spacing:.5px}
+header{height:86px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:#fff;position:sticky;top:0;z-index:20}
+.logo{display:flex;align-items:center;gap:9px}.logoMark{font-size:38px;color:var(--gold)}.brand{font:700 25px Georgia,serif;color:#9b711a}.store{font:10px Arial;letter-spacing:6px;text-align:center;color:#222}.slogan{font:italic 11px Georgia;color:#555}
+nav{display:flex;gap:26px;font-size:14px;font-weight:700}nav a:hover{color:var(--gold)}
+.icons{display:flex;gap:10px}.iconBtn{border:0;background:#fff;font-size:21px;cursor:pointer;position:relative}.count{position:absolute;right:-4px;top:-4px;background:var(--gold);color:#fff;border-radius:20px;font-size:10px;padding:2px 5px}
+.hero{min-height:515px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;padding:55px 6%;color:#fff;background:linear-gradient(90deg,#0b0b0b 0%,#16130d 48%,#2a2315 100%);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:500px;height:500px;border-radius:50%;right:-130px;top:-130px;background:radial-gradient(circle,#bd8b2440,transparent 65%)}
+.hero h1{font:700 clamp(42px,6vw,70px) Georgia,serif;color:#e5bd5b;margin:8px 0 0}.hero h2{font:22px Arial;letter-spacing:12px;margin:0 0 15px}.hero p{font:italic 21px Georgia;color:#f3f3f3}.stars{color:#e5bd5b;letter-spacing:9px;font-size:20px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:0;border-radius:30px;padding:14px 23px;font-weight:800;cursor:pointer}.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff}.outline{background:#111;border:1px solid #c99a34;color:#fff}
+.heroCard{justify-self:end;width:min(330px,100%);border:1px solid #d0a63d;border-radius:16px;padding:25px;background:#050505c9;box-shadow:0 20px 70px #0008;z-index:2}.heroCard .big{font-size:25px;font-weight:800;margin:15px 0;color:#fff}.heroCard b{color:#e5bd5b}
+.wrap{max-width:1250px;margin:auto;padding:50px 5%}.title{font:700 30px Georgia,serif;margin:0 0 22px}.sub{color:var(--muted);margin-top:-13px;margin-bottom:24px}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}.cat{border:1px solid var(--line);border-radius:13px;padding:22px 10px;text-align:center;cursor:pointer;background:#fff;transition:.2s}.cat:hover{transform:translateY(-3px);box-shadow:0 8px 25px #0000000c}.cat .emoji{font-size:38px;display:block;margin-bottom:8px}
+.shopGrid{display:grid;grid-template-columns:1fr 310px;gap:25px}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.pic{height:255px;background:linear-gradient(135deg,#f0ede5,#d9d4c8);display:flex;align-items:center;justify-content:center;font-size:70px;position:relative}.badge{position:absolute;left:10px;top:10px;background:#111;color:#fff;border-radius:15px;padding:6px 10px;font-size:11px}.body{padding:15px}.body h3{margin:0 0 8px;font-size:16px}.price{font-weight:900;color:#9b711a;margin-bottom:12px}.row{display:flex;gap:8px}.select{width:100%;padding:9px;border:1px solid var(--line);border-radius:9px}.card .btn{width:100%;padding:10px}
+.ai{border:1px solid #d0a63d;border-radius:15px;overflow:hidden;height:max-content;position:sticky;top:105px}.aiHead{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:16px;font-weight:900}.aiBody{padding:15px}.bubble{background:#f7f5ef;border-radius:12px;padding:12px;font-size:14px;line-height:1.45;margin-bottom:10px}.quick{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:20px;padding:8px 10px;margin:7px 0;cursor:pointer;font-size:12px}.chat{display:flex;gap:6px;margin-top:12px}.chat input{flex:1;border:1px solid var(--line);border-radius:22px;padding:10px}.chat button{border:0;background:var(--gold);color:#fff;width:42px;border-radius:50%;cursor:pointer}
+.features{background:#f7f5ef;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.feature{text-align:center;padding:25px;border-right:1px solid #e3ded2}.feature b{display:block;margin:7px 0}.feature span{font-size:12px;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.aboutBox{background:#111;color:#fff;border-radius:18px;padding:35px}.aboutBox h2{font:30px Georgia,serif;color:#e5bd5b}
+footer{background:#121212;color:#fff;padding:35px 5%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:25px}.footerTitle{color:#e5bd5b;font:22px Georgia,serif}.footerSmall{color:#bbb;font-size:13px;line-height:1.8}
+.wa{position:fixed;right:18px;bottom:18px;background:var(--gold);color:#fff;padding:14px 18px;border-radius:14px;font-weight:900;z-index:30;box-shadow:0 10px 30px #0003}
+.drawer{position:fixed;inset:0;background:#0006;z-index:50;display:none}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;padding:25px;overflow:auto}.panel h2{font:28px Georgia,serif}.close{float:right;border:0;background:none;font-size:25px;cursor:pointer}.cartItem{display:grid;grid-template-columns:1fr auto;gap:10px;border-bottom:1px solid var(--line);padding:14px 0}.total{font-size:20px;font-weight:900;margin:20px 0}.empty{color:#777;text-align:center;padding:40px 0}
+.admin{background:#f7f5ef}.adminGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.admin input,.admin select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;margin:6px 0 12px}.adminCard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+@media(max-width:950px){nav{display:none}.hero{grid-template-columns:1fr}.heroCard{justify-self:start;margin-top:30px}.categories{grid-template-columns:repeat(3,1fr)}.shopGrid{grid-template-columns:1fr}.ai{position:static}.products{grid-template-columns:repeat(2,1fr)}.about,footer{grid-template-columns:1fr 1fr}.features{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.categories,.products,.about,footer,.features{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr}.hero{padding:40px 5%}.hero h1{font-size:43px}.brand{font-size:19px}.slogan{display:none}.categories{gap:8px}.cat{padding:15px 5px}}
+</style>
+</head>
+<body>
+<div class="top">✨ LIVRAISON À DAKAR & ALENTOURS • COMMANDE PAR WHATSAPP • PAIEMENT WAVE / ORANGE MONEY / CASH</div>
+<header>
+  <a class="logo" href="#"><div class="logoMark">★</div><div><div class="brand">Étoile Abibatou <span style="font-size:18px">STORE</span></div><div class="store">ÉTOILE ABIBATOU</div><div class="slogan">Un univers de lumière et de charme</div></div></a>
+  <nav><a href="#accueil">Accueil</a><a href="#catalogue">Catalogue</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+  <div class="icons"><button class="iconBtn" onclick="openCart()">🛒<span class="count" id="cartCount">0</span></button></div>
+</header>
+
+<section class="hero" id="accueil">
+ <div>
+   <div class="stars">★ ★ ★</div><h1>Étoile Abibatou</h1><h2>STORE</h2>
+   <p>Un univers de lumière et de charme</p>
+   <div class="actions"><a class="btn gold" href="#catalogue">🛍️ Découvrir la collection</a><button class="btn outline" onclick="document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">🤖 Parler à notre IA</button></div>
+ </div>
+ <div class="heroCard"><div>📍 Mariste, côté Festival Beurger<br>Dakar, Sénégal</div><div class="big">☏ 78 865 05 62</div><div><b>Style • Qualité • Élégance</b><br><br>Une boutique pensée pour trouver facilement ta prochaine tenue.</div></div>
+</section>
+
+<section class="wrap" id="catalogue">
+ <h2 class="title">Nos catégories</h2>
+ <div class="categories">
+  <div class="cat" onclick="filter('T-shirts')"><span class="emoji">👕</span>T-shirts</div>
+  <div class="cat" onclick="filter('Jeans')"><span class="emoji">👖</span>Jeans</div>
+  <div class="cat" onclick="filter('Pantalons')"><span class="emoji">🥼</span>Pantalons oversize</div>
+  <div class="cat" onclick="filter('Ensembles')"><span class="emoji">🧥</span>Ensembles</div>
+  <div class="cat" onclick="filter('Nouveautés')"><span class="emoji">★</span>Nouveautés</div>
+  <div class="cat" onclick="filter('Promotions')"><span class="emoji">🏷️</span>Promotions</div>
+ </div>
+</section>
+
+<section class="wrap" style="padding-top:0"><div class="shopGrid">
+ <div><h2 class="title">👑 Nos coups de cœur</h2><p class="sub">Sélection Étoile Abibatou Store</p><div class="products" id="products"></div></div>
+ <aside class="ai" id="assistant"><div class="aiHead">🤖 Votre IA Boutique</div><div class="aiBody">
+   <div class="bubble" id="aiReply">Bonjour ✨ Je peux t'aider à choisir une tenue, trouver un article, connaître un prix ou préparer une commande.</div>
+   <button class="quick" onclick="ask('Je cherche une tenue chic pour sortir')">Je cherche une tenue chic pour sortir</button>
+   <button class="quick" onclick="ask('Avez-vous des jeans larges ?')">Avez-vous des jeans larges ?</button>
+   <button class="quick" onclick="ask('Quels sont les prix ?')">Quels sont les prix ?</button>
+   <button class="quick" onclick="ask('Montre-moi les nouveautés')">Montre-moi les nouveautés</button>
+   <div class="chat"><input id="aiInput" placeholder="Écrivez votre message..."><button onclick="sendAI()">➤</button></div>
+   <small style="display:block;margin-top:8px;color:#777">Assistant de démonstration. Pour une IA connectée à un modèle réel, ajoute une clé API côté serveur.</small>
+ </div></aside>
+ </div></section>
+
+<div class="features"><div class="feature">🛡️<b>Qualité garantie</b><span>Articles sélectionnés</span></div><div class="feature">🚚<b>Livraison rapide</b><span>Dakar et alentours</span></div><div class="feature">🔒<b>Paiement sécurisé</b><span>Wave / Orange Money / Cash</span></div><div class="feature">🎧<b>Service client</b><span>WhatsApp à votre écoute</span></div></div>
+
+<section class="wrap" id="apropos"><div class="about"><div class="aboutBox"><div class="stars">★ ★ ★</div><h2>Bienvenue chez Étoile Abibatou Store</h2><p>Une boutique où le style rencontre la simplicité. Découvre nos vêtements, choisis ta taille et commande directement depuis ton téléphone.</p><a class="btn gold" href="https://wa.me/221788650562?text=Bonjour%20Étoile%20Abibatou%20Store" target="_blank">Nous contacter</a></div><div><h2 class="title">Une expérience simple</h2><p>Parcours le catalogue, ajoute tes articles au panier, puis envoie ta commande sur WhatsApp. Le site est également préparé pour accueillir une vraie IA connectée à une API.</p><p><b>Adresse :</b> Mariste, côté Festival Beurger, Dakar</p><p><b>Téléphone / WhatsApp :</b> 78 865 05 62</p></div></div></section>
+
+<footer id="contact"><div><div class="footerTitle">★ Étoile Abibatou Store</div><div class="footerSmall">Un univers de lumière et de charme</div></div><div class="footerSmall">📍 Mariste, côté Festival Beurger<br>📞 78 865 05 62<br>📲 Commandes WhatsApp</div><div class="footerSmall">© 2026 Étoile Abibatou Store<br>Site boutique — prototype prêt à personnaliser</div></footer>
+<a class="wa" href="https://wa.me/221788650562?text=Bonjour%20Étoile%20Abibatou%20Store%2C%20je%20souhaite%20passer%20une%20commande." target="_blank">💬 WhatsApp • 78 865 05 62</a>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><div class="panel"><button class="close" onclick="closeCart()">×</button><h2>Mon panier</h2><div id="cart"></div><div class="total" id="total"></div><button class="btn gold" style="width:100%" onclick="checkout()">Commander sur WhatsApp</button></div></div>
+
+<script>
+const products=[
+{id:1,name:'T-shirt oversize premium',price:7500,cat:'T-shirts',icon:'👕',new:true},
+{id:2,name:'Jean large coupe droite',price:12000,cat:'Jeans',icon:'👖',new:true},
+{id:3,name:'Pantalon cargo oversize',price:14500,cat:'Pantalons',icon:'🥼'},
+{id:4,name:'Ensemble chic unisexe',price:18000,cat:'Ensembles',icon:'🧥',new:true},
+{id:5,name:'T-shirt logo tendance',price:8500,cat:'T-shirts',icon:'👕',promo:true},
+{id:6,name:'Jean oversize denim',price:13500,cat:'Jeans',icon:'👖'},
+{id:7,name:'Pantalon wide chic',price:15000,cat:'Pantalons',icon:'🥼',new:true},
+{id:8,name:'Ensemble casual premium',price:19500,cat:'Ensembles',icon:'🧥',promo:true},
+{id:9,name:'T-shirt essentiel',price:6500,cat:'T-shirts',icon:'👕'},
+];
+let current=[...products], cart=JSON.parse(localStorage.getItem('etoileCart')||'[]');
+const money=n=>n.toLocaleString('fr-FR')+' FCFA';
+function render(list=current){document.getElementById('products').innerHTML=list.map(p=>`<article class="card"><div class="pic">${p.new?'<span class="badge">NOUVEAU</span>':''}${p.promo?'<span class="badge">PROMO</span>':''}<span>${p.icon}</span></div><div class="body"><h3>${p.name}</h3><div class="price">${money(p.price)}</div><div class="row"><select class="select" id="size${p.id}"><option>Taille</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select><button class="btn gold" onclick="add(${p.id})">Ajouter</button></div></div></article>`).join('')}
+function filter(cat){if(cat==='Nouveautés')current=products.filter(p=>p.new);else if(cat==='Promotions')current=products.filter(p=>p.promo);else current=products.filter(p=>p.cat===cat);render(current);document.getElementById('products').scrollIntoView({behavior:'smooth',block:'center'})}
+function add(id){let p=products.find(x=>x.id===id),size=document.getElementById('size'+id).value;if(size==='Taille')size='Non précisée';cart.push({...p,size});save();openCart()}
+function save(){localStorage.setItem('etoileCart',JSON.stringify(cart));document.getElementById('cartCount').textContent=cart.length;renderCart()}
+function remove(i){cart.splice(i,1);save()}
+function renderCart(){let el=document.getElementById('cart');if(!cart.length){el.innerHTML='<div class="empty">Votre panier est vide.</div>';document.getElementById('total').textContent='';return}el.innerHTML=cart.map((p,i)=>`<div class="cartItem"><div><b>${p.name}</b><br><small>Taille : ${p.size}</small><br><span class="price">${money(p.price)}</span></div><button onclick="remove(${i})" style="border:0;background:none;cursor:pointer">🗑️</button></div>`).join('');document.getElementById('total').textContent='Total : '+money(cart.reduce((s,p)=>s+p.price,0))}
+function openCart(){document.getElementById('drawer').classList.add('open');renderCart()}function closeCart(){document.getElementById('drawer').classList.remove('open')}
+function checkout(){if(!cart.length)return;let lines=cart.map(p=>`- ${p.name} — ${p.size} — ${money(p.price)}`).join('\\n');let total=cart.reduce((s,p)=>s+p.price,0);let msg=`Bonjour Étoile Abibatou Store ✨\\nJe souhaite commander :\\n${lines}\\nTotal : ${money(total)}\\nMerci de me confirmer la disponibilité et la livraison.`;window.open('https://wa.me/221788650562?text='+encodeURIComponent(msg),'_blank')}
+function answer(t){let s=t.toLowerCase();if(s.includes('jean'))return'Oui ✨ Nous avons plusieurs jeans : Jean large coupe droite à 12 000 FCFA et Jean oversize denim à 13 500 FCFA. Clique sur Jeans pour les voir.';if(s.includes('prix'))return'Les prix de la sélection commencent à 6 500 FCFA. Je peux aussi te montrer les articles par catégorie.';if(s.includes('nouve'))return'Nos nouveautés comprennent notamment le T-shirt oversize premium, le Jean large, le Pantalon wide et l’Ensemble chic.';if(s.includes('chic'))return'Pour une tenue chic, je te conseille l’Ensemble chic unisexe à 18 000 FCFA, ou un jean large avec un T-shirt premium.';return'Je peux t’aider avec les jeans, les T-shirts, les pantalons oversize, les ensembles, les prix et les commandes WhatsApp.'}
+function ask(t){document.getElementById('aiReply').innerHTML='<b>IA :</b> '+answer(t)}function sendAI(){let x=document.getElementById('aiInput').value.trim();if(x){ask(x);document.getElementById('aiInput').value=''}}
+document.getElementById('cartCount').textContent=cart.length;render();renderCart();
+</script>
+</body>
+</html>
